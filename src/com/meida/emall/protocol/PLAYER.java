@@ -1,0 +1,86 @@
+
+package com.meida.emall.protocol;
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.util.Log;
+
+import com.external.activeandroid.Model;
+import com.external.activeandroid.annotation.Column;
+import com.external.activeandroid.annotation.Table;
+
+@Table(name = "PLAYER")
+public class PLAYER  extends Model
+{
+
+//     @Column(name = "description")
+//     public String description;
+//
+//     @Column(name = "photo")
+//     public PHOTO   photo;
+//
+//     @Column(name = "url")
+//     public String url;
+//
+//     @Column(name = "action")
+//     public String action;
+//
+//     @Column(name = "action_id")
+//     public int action_id;
+
+//	@Column(name = "goods_id")
+//	public String goods_id;
+	
+	@Column(name = "type")
+	public int type;
+	
+	@Column(name = "link")
+	public String link;
+	
+     @Column(name = "pic")
+     public String pic;
+
+ public static PLAYER fromJson(JSONObject jsonObject)  throws JSONException
+ {
+     if(null == jsonObject){
+       return null;
+      }
+
+     PLAYER   localItem = new PLAYER();
+
+     JSONArray subItemArray;
+
+//     localItem.description = jsonObject.optString("description");
+//     localItem.photo = PHOTO.fromJson(jsonObject.optJSONObject("photo"));
+//
+//     localItem.url = jsonObject.optString("url");
+//     localItem.action = jsonObject.optString("action");
+//     localItem.action_id = jsonObject.optInt("action_id");
+     localItem.type = jsonObject.optInt("type");
+     localItem.link = jsonObject.optString("link");
+     localItem.pic = jsonObject.optString("pic");
+     return localItem;
+ }
+
+ public JSONObject  toJson() throws JSONException 
+ {
+     JSONObject localItemObject = new JSONObject();
+     JSONArray itemJSONArray = new JSONArray();
+//     localItemObject.put("description", description);
+//     if(null!=photo)
+//     {
+//       localItemObject.put("photo", photo.toJson());
+//     }
+//     localItemObject.put("url", url);
+//     localItemObject.put("action",action);
+//     localItemObject.put("action_id",action_id);
+     localItemObject.put("link", link);
+     localItemObject.put("type", type);
+     localItemObject.put("pic", pic);
+     return localItemObject;
+ }
+
+}

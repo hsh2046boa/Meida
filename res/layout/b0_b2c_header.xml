@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- <com.insthub.BeeFramework.view.ChildViewPager -->
+
+    <com.insthub.BeeFramework.view.PagerOutLayout
+        android:id="@+id/mylayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+    <android.support.v4.view.ViewPager    
+        android:id="@+id/banner_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="160dp" />
+    </com.insthub.BeeFramework.view.PagerOutLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="3dp" >
+
+        <com.external.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="2dp" />
+    </FrameLayout>
+
+</FrameLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+    <EditText android:id="@+id/search_input"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/search_input"
+        android:background="@drawable/input_selector"/>
+</LinearLayout>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@color/TextColorWhite" >
+
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/search_btn"
+        android:text="@string/search"
+        android:textColor="@color/TextColorWhite" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/search_btn"
+        android:text="@string/category_goods"
+        android:textColor="@color/TextColorWhite" />
+    
+</LinearLayout>
+
+</LinearLayout>

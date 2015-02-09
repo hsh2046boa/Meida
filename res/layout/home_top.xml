@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nav_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:src="@drawable/home_top_title" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="right|center_vertical" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/home_top_btn"
+            android:text="@string/b2c"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/home_top_btn"
+            android:text="@string/c2c"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/home_top_btn"
+            android:text="@string/get_pt"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

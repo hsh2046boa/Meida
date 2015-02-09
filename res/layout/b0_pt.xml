@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/body"
+    android:orientation="vertical" >
+
+    <!-- <include
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        layout="@layout/home_top" /> -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp" >
+
+        <Button
+            android:id="@+id/no_limited"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/no_limit" />
+
+        <Button
+            android:id="@+id/gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/gender" />
+
+        <Button
+            android:id="@+id/district"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/district" />
+
+        <Button
+            android:id="@+id/jobs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/jobs" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp" >
+
+        <Button
+            android:id="@+id/free_shipping"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/free_shipping" />
+
+        <Button
+            android:id="@+id/real_goods"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/real_goods" />
+
+        <Button
+            android:id="@+id/age_range"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/age_range" />
+
+        <Button
+            android:id="@+id/price_range"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:background="@color/green_dark"
+            android:drawableRight="@drawable/arrow_down"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="13sp"
+            android:text="@string/price_range" />
+    </LinearLayout>
+
+    <com.insthub.BeeFramework.view.MyListView
+        android:id="@+id/pt_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/good_list_bg"
+        android:divider="#00000000"
+        android:dividerHeight="15dp"
+        android:scrollbars="none" />
+
+</LinearLayout>

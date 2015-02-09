@@ -1,0 +1,67 @@
+package com.meida.emall.protocol;
+
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.external.activeandroid.Model;
+import com.external.activeandroid.annotation.Column;
+import com.external.activeandroid.annotation.Table;
+@Table(name = "CATE")
+public class CATE extends Model {
+
+	@Column(name = "cate_id")
+    public int cate_id;
+
+    @Column(name = "cate_name")
+    public String cate_name;
+
+//    public ArrayList<CATEGORY>   children = new ArrayList<CATEGORY>();
+
+public static CATE fromJson(JSONObject jsonObject)  throws JSONException
+{
+    if(null == jsonObject){
+      return null;
+     }
+
+    CATE   localItem = new CATE();
+
+//    JSONArray subItemArray;
+
+    localItem.cate_id = jsonObject.optInt("cate_id");
+
+    localItem.cate_name = jsonObject.optString("cate_name");
+
+//    subItemArray = jsonObject.optJSONArray("children");
+//    if(null != subItemArray)
+//     {
+//        for(int i = 0;i < subItemArray.length();i++)
+//         {
+//            JSONObject subItemObject = subItemArray.getJSONObject(i);
+//            CATEGORY subItem = CATEGORY.fromJson(subItemObject);
+//            localItem.children.add(subItem);
+//        }
+//    }
+
+    return localItem;
+}
+
+public JSONObject  toJson() throws JSONException 
+{
+    JSONObject localItemObject = new JSONObject();
+//    JSONArray itemJSONArray = new JSONArray();
+    localItemObject.put("cate_id", cate_id);
+    localItemObject.put("cate_name", cate_name);
+
+//    for(int i =0; i< children.size(); i++)
+//    {
+//        CATEGORY itemData =children.get(i);
+//        JSONObject itemJSONObject = itemData.toJson();
+//        itemJSONArray.put(itemJSONObject);
+//    }
+//    localItemObject.put("children", itemJSONArray);
+    return localItemObject;
+}
+}

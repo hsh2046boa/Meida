@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/TextColorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/green_dark"
+        android:gravity="left|center_vertical"
+        android:textColor="@color/TextColorWhite"
+        android:textSize="15sp"
+        android:text="【三店通用】 华莱士" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tuitional_img_2_1" />
+
+    <TextView
+        android:id="@+id/des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:layout_margin="5dp"
+        android:text="超值单人餐，提供免费wifi，尽享精致美味" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:layout_margin="5dp"
+        android:textColor="@color/green_dark"
+        android:textSize="13sp"
+        android:text="回答可赚取5Pt" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:layout_margin="5dp"
+        android:textColor="@color/green_dark"
+        android:textSize="13sp"
+        android:text="回答期限：2014.10.10-10.20" />
+
+</LinearLayout>
