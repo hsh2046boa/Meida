@@ -12,11 +12,13 @@ import com.external.maxwin.view.XListView.IXListViewListener;
 import com.insthub.BeeFramework.activity.BaseActivity;
 import com.insthub.BeeFramework.model.BusinessMessage;
 import com.meida.emall.R;
+import com.meida.emall.adapter.CommentAdapter;
 
 public class CommentActivity extends BaseActivity implements IXListViewListener {
 
 	private ImageView back;
 	private XListView xlistView;
+	private CommentAdapter adapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,10 +33,13 @@ public class CommentActivity extends BaseActivity implements IXListViewListener 
 			}
 		});
 		
-		xlistView = (XListView) findViewById(R.id.collect_list);
+		xlistView = (XListView) findViewById(R.id.comment_listview);
 		xlistView.setPullLoadEnable(true);
 		xlistView.setRefreshTime();
 		xlistView.setXListViewListener(this,1);
+		
+		adapter = new CommentAdapter(this, null);
+		xlistView.setAdapter(adapter);
 	}
 
 	@Override

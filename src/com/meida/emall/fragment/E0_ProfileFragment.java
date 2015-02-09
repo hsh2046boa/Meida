@@ -462,7 +462,7 @@ public class E0_ProfileFragment extends BaseFragment implements IXListViewListen
 				startActivity(intent);
 				getActivity().overridePendingTransition(R.anim.push_buttom_in,R.anim.push_buttom_out);
 			} else {
-				intent = new Intent(getActivity(), UserInfoActivity.class);
+				intent = new Intent(getActivity(), CommentActivity.class);
 				startActivity(intent);
 				getActivity().overridePendingTransition(R.anim.push_right_in,
 						R.anim.push_right_out);

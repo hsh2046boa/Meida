@@ -42,8 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:padding="5dp"
         android:background="@drawable/good_list_bg"
         android:divider="@color/TextColorGray"
+        android:dividerHeight="1dp"
         android:scrollbars="none" />
 
 </LinearLayout>
