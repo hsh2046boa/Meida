@@ -412,8 +412,13 @@
 <string name="profile_selleredition">个人市集卖家</string>
 <string name="profile_goods">发布商品</string>
 <string name="profile_orders_manager">订单管理</string>
-<string name="profile_shop_setting">店铺设置</string>
+<string name="profile_shop_setting">配送设置</string>
 <string name="profile_cion_center">电子币中心</string>
 <string name="profile_market_title">已发布商品</string>
+
+<string name="buyer_order_order_no">订单号:</string>
+<string name="buyer_order_order_price">订单金额:</string>
+<string name="buyer_order_order_time">下单时间:</string>
+<string name="buyer_order_delete">删除</string>
 
 </resources>

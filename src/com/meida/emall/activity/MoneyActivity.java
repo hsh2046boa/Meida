@@ -7,7 +7,11 @@ import android.os.Bundle;
 import com.insthub.BeeFramework.activity.BaseActivity;
 import com.insthub.BeeFramework.model.BusinessMessage;
 import com.meida.emall.R;
-
+/**
+ * 电子币中心
+ * @author LENOV
+ *
+ */
 public class MoneyActivity extends BaseActivity {
 
 	@Override

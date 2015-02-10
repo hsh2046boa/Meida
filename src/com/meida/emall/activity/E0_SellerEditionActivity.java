@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -31,11 +32,18 @@ import com.insthub.BeeFramework.activity.BaseActivity;
 import com.insthub.BeeFramework.model.BusinessResponse;
 import com.insthub.BeeFramework.view.WebImageView;
 import com.meida.emall.R;
+import com.meida.emall.adapter.E0_SellerEditionAdapter;
+import com.meida.emall.model.LoginModel;
+import com.meida.emall.model.MyFairModel;
 import com.meida.emall.model.ProtocolConst;
 import com.meida.emall.model.UserInfoModel;
 import com.meida.emall.protocol.USER;
 import com.umeng.analytics.MobclickAgent;
-
+/**
+ * 个人市集卖家
+ * @author LENOV
+ *
+ */
 public class E0_SellerEditionActivity extends BaseActivity implements IXListViewListener, OnClickListener, BusinessResponse{
 	private XListView    xlistView;
 	private View         mHeader;
@@ -54,10 +62,11 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 	private boolean      isRefresh = false;
 	private SharedPreferences shared;
 	private SharedPreferences.Editor editor;
-	private USER user;
-	private UserInfoModel userInfoModel;
     private File file;
 	private View view;
+	private MyFairModel fairModel;
+	private ProgressDialog pd = null;
+	private E0_SellerEditionAdapter mE0SellAdapter;
 	
 	
 	@Override
@@ -67,6 +76,18 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 		setContentView(R.layout.e0_selleredition);
 		
 		initView();
+		initData();
+	}
+	
+	private void initData(){
+		fairModel = new MyFairModel(E0_SellerEditionActivity.this);
+		fairModel.addResponseListener(this);
+		fairModel.getMyFair("1");
+		
+		String hold=getResources().getString(R.string.hold_on);
+		pd = new ProgressDialog(E0_SellerEditionActivity.this);
+		pd.setMessage(hold);
+		pd.show();
 	}
 	
 	private void initView(){
@@ -102,38 +123,32 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 		shared = getSharedPreferences("userInfo", 0); 
 		editor = shared.edit();
 		
+		uid = shared.getString("uid", "");
 		File files = new File(getCacheDir()+"/Emall/cache"+"/temp.jpg");
 		if(files.exists()) {
 			photo.setImageBitmap(BitmapFactory.decodeFile(getCacheDir()+"/Emall/cache"+"/temp.jpg"));
 		} else {
 			photo.setImageResource(R.drawable.profile_no_avarta_icon);
 		}
-		
-		if (null == userInfoModel)
-        {
-            userInfoModel = new UserInfoModel(this);
-        }
-        userInfoModel.addResponseListener(this);
-		
-		uid = shared.getString("uid", "");
-		if (uid.equals("")) {
-            String click = getResources().getString(R.string.click_to_login);
-			name.setText(click);
-			camera.setVisibility(View.GONE);
-            memberLevelLayout.setVisibility(View.GONE);
 
-		} else {
-			userInfoModel.getUserInfo();
-			camera.setVisibility(View.VISIBLE);
-            memberLevelLayout.setVisibility(View.VISIBLE);
-		}
 	}
 
 	@Override
 	public void OnMessageResponse(String url, JSONObject jo, AjaxStatus status)
 			throws JSONException {
 		// TODO Auto-generated method stub
-		
+		if(pd.isShowing()) {
+			pd.dismiss();
+		}
+		if(url.endsWith(ProtocolConst.MyFair)) {			
+			System.out.println("sss");
+			xlistView.stopRefresh();
+			xlistView.setRefreshTime();
+			
+			mE0SellAdapter = new E0_SellerEditionAdapter(this, fairModel.fair_List);
+			xlistView.setAdapter(mE0SellAdapter);
+			//xlistView.setOnItemClickListener(listener)
+		}
 	}
 
 	@Override
@@ -142,13 +157,34 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 		Intent intent;
 		switch(v.getId()){
 			case R.id.profile_seller:
+				
 				break;
 			case R.id.profile_back:
 				E0_SellerEditionActivity.this.finish();
 				break;
 			case R.id.profile_orders:
+				if (uid.equals("")) {
+					isRefresh = true;
+					intent = new Intent(E0_SellerEditionActivity.this, A0_SigninActivity.class);
+					startActivity(intent);
+	            	overridePendingTransition(R.anim.push_buttom_in,R.anim.push_buttom_out);
+				} else {
+					intent = new Intent(E0_SellerEditionActivity.this,E0_OrdersManagerActivity.class);
+				    startActivity(intent);
+	                overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
+				}
 				break;
 			case R.id.profile_favor:
+				if (uid.equals("")) {
+					isRefresh = true;
+					intent = new Intent(E0_SellerEditionActivity.this, A0_SigninActivity.class);
+					startActivity(intent);
+	            	overridePendingTransition(R.anim.push_buttom_in,R.anim.push_buttom_out);
+				} else {
+					intent = new Intent(E0_SellerEditionActivity.this,E0_ShopSettingActivity.class);
+				    startActivity(intent);
+	                overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
+				}
 				break;
 			case R.id.profile_money:
 				if (uid.equals("")) {
@@ -161,7 +197,6 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 				    startActivity(intent);
 	                overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
 				}
-			    
 				break;
 			case R.id.profile_head_photo:
 				 if (uid.equals("")) {
@@ -220,22 +255,17 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
         	}
 
         }
-        
-        if(requestCode == 2) {
-        	userInfoModel.getUserInfo();
-    	}
     	
     	
     }  
 	
 	@Override
     public void onDestroy() {
-        userInfoModel.removeResponseListener(this);
+		fairModel.removeResponseListener(this);
         super.onDestroy();
     }
     @Override
     public void onPause() {
-         
         super.onPause();
         MobclickAgent.onPageEnd("Profile");
     }
@@ -243,9 +273,7 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 	@Override
 	public void onRefresh(int id) {
 		// TODO Auto-generated method stub
-		if (!uid.equals("")) {
-			userInfoModel.getUserInfo();
-		}
+
 	}
 
 	@Override
