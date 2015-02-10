@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/profile_img_bg" >
+
+        <ImageView
+            android:id="@+id/profile_head_setting"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:src="@drawable/profile_refresh_site_icon"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp" >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/profile_avatar_bg" />
+
+            <com.insthub.BeeFramework.view.RoundedWebImageView
+                android:id="@+id/profile_head_photo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-2dp"
+                android:src="@drawable/profile_no_avarta_icon" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/profile_head_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:src="@drawable/profile_refresh_camera_icon" />
+
+        <TextView
+            android:id="@+id/profile_head_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:id="@+id/member_level_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/member_level_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:baselineAlignBottom="false"
+                android:src="@drawable/profile_vip_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/member_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:textColor="#cccccc"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <Button
+                android:id="@+id/profile_orders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/profile_orders"
+                android:background="@color/transparent"
+                android:textColor="@color/TextColorGray"
+                android:text="@string/profile_orders_manager" />
+            
+            <Button
+                android:id="@+id/profile_favor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/profile_setting"
+                android:background="@color/transparent"
+                android:textColor="@color/TextColorGray"
+                android:text="@string/profile_shop_setting" />
+
+            <Button
+                android:id="@+id/profile_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/profile_money"
+                android:background="@color/transparent"
+                android:textColor="@color/TextColorGray"
+                android:text="@string/profile_money" />
+
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/profile_market_title" android:textColor="@color/TextColorBlack"
+            android:layout_marginLeft="10dp" android:layout_marginTop="10dp"/>
+
+</LinearLayout>

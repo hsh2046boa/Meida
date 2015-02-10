@@ -135,13 +135,13 @@ public class E0_ProfileFragment extends BaseFragment implements IXListViewListen
 //        headView = LayoutInflater.from(getActivity()).inflate(R.layout.e0_profile_head, null);
         headView = LayoutInflater.from(getActivity()).inflate(R.layout.profile_head, null);
 
-        setting = (Button) headView.findViewById(R.id.profile_setting);
+        setting = (Button) view.findViewById(R.id.profile_seller);
         setting.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				 
-				Intent intent = new Intent(getActivity(), G0_SettingActivity.class);
+				Intent intent = new Intent(getActivity(), E0_SellerEditionActivity.class);
 				startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.push_right_in,
                         R.anim.push_right_out);

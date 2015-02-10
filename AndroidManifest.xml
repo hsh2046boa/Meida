@@ -274,6 +274,19 @@
             android:name="com.alipay.android.app.sdk.WapPayActivity"
             android:screenOrientation="portrait" >
         </activity>
+        
+        
+        <activity
+            android:name="com.meida.emall.activity.E0_SellerEditionActivity"          
+            android:screenOrientation="portrait" />
+		<activity
+            android:name="com.meida.emall.activity.E0_ShopSettingActivity"          
+            android:screenOrientation="portrait" />
+		<activity
+            android:name="com.meida.emall.activity.E0_OrdersManagerActivity"          
+            android:screenOrientation="portrait" />
+        
+        
 
         <!-- push service client -->
         <receiver android:name="com.insthub.BeeFramework.service.PushMessageReceiver" >
