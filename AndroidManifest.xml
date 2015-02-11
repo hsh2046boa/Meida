@@ -288,6 +288,9 @@
 		<activity
             android:name="com.meida.emall.activity.E0_DistributionAddDetailActivity"          
             android:screenOrientation="portrait" />
+		<activity
+            android:name="com.meida.emall.activity.E0_AddGoodsActivity"          
+            android:screenOrientation="portrait" />
         
         
 

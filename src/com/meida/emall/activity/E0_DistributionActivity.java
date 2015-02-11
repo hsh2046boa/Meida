@@ -21,7 +21,6 @@ import com.insthub.BeeFramework.model.BusinessResponse;
 import android.widget.AdapterView.OnItemClickListener;
 import com.meida.emall.R;
 import com.meida.emall.adapter.E0_DistributionAdapter;
-import com.meida.emall.adapter.E0_DistributionAddDetailActivity;
 /**
  * 店铺设置
  * @author LENOV
@@ -85,7 +84,7 @@ public class E0_DistributionActivity extends BaseActivity implements IXListViewL
 				break;
 			case R.id.add_distribution:
 				Intent add = new Intent(E0_DistributionActivity.this,E0_DistributionAddDetailActivity.class);
-				add.putExtra("type", "add");
+				add.putExtra("dis_type", "add");
 				startActivity(add);
 				break;
 		}
@@ -98,7 +97,7 @@ public class E0_DistributionActivity extends BaseActivity implements IXListViewL
 				long id) {
 			// TODO Auto-generated method stub
 			Intent add = new Intent(E0_DistributionActivity.this,E0_DistributionAddDetailActivity.class);
-			add.putExtra("type", "edit");
+			add.putExtra("dis_type", "edit");
 			startActivity(add);
 		}
 		

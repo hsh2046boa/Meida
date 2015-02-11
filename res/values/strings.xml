@@ -431,4 +431,50 @@
 <string name="distribution_str_edit">编辑</string>
 <string name="distribution_str_del">删除</string>
 
+<string name="distribution_str_info">基本信息</string>
+<string name="distribution_str_name">配送名称:</string>
+<string name="distribution_str_order">排序:</string>
+<string name="distribution_str_submit">提交</string>
+<string name="distribution_str_add">新增配送</string>
+
+<string name="distribution_hint_price">请输入电子币</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

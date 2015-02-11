@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@drawable/body"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/nav_bg" >
+
+        <ImageView
+            android:id="@+id/distribution_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/item_grid_header_arrow_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:id="@+id/dis_title"
+            android:text="@string/distribution_str_add"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/add_distribution"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp" 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" android:visibility="gone"
+            android:layout_marginRight="5dp" android:paddingLeft="3dp" android:paddingRight="3dp"
+            android:background="@drawable/filter_blue_btn"
+            android:text="@string/distribution_layout_add"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/distribution_str_info"
+        android:textColor="@color/orangered" android:layout_marginLeft="5dp" android:layout_marginTop="5dp"/>
+    
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginLeft="5dp"
+         android:layout_marginRight="5dp" android:padding="5dp">
+        <TextView android:id="@+id/title1" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_str_name" android:gravity="center_vertical|right" />
+        <EditText android:id="@+id/dis_name" android:layout_height="30dp" android:layout_width="fill_parent" 
+            android:background="@drawable/shape_edittext_bg" android:paddingLeft="3dp"
+            android:layout_toRightOf="@+id/title1" android:singleLine="true" android:text="" android:textSize="@dimen/dis_textsize"/>
+        
+        <TextView android:id="@+id/title2" android:layout_height="30dp" android:layout_width="65dp" android:layout_below="@+id/title1"
+            android:layout_marginTop="5dp"
+            android:text="@string/distribution_str_msg" android:gravity="center_vertical|right" android:textSize="@dimen/dis_textsize"/>
+        <EditText android:id="@+id/dis_msg" android:layout_height="120dp" android:layout_width="fill_parent" android:textSize="@dimen/dis_textsize"
+            android:layout_toRightOf="@+id/title2" android:layout_below="@+id/title1" android:background="@drawable/shape_edittext_bg" 
+            android:paddingLeft="3dp" android:layout_marginTop="5dp"/>
+        
+        <TextView android:id="@+id/title3" android:layout_height="30dp" android:layout_width="65dp" android:layout_below="@+id/dis_msg" android:layout_marginTop="5dp"
+            android:text="@string/distribution_str_firstprice" android:gravity="center_vertical|right" android:textSize="@dimen/dis_textsize"/>
+        <EditText android:id="@+id/dis_firstprice" android:layout_height="30dp" android:layout_width="fill_parent" android:digits="1234567890."
+            android:layout_toRightOf="@+id/title3" android:layout_below="@+id/dis_msg" android:singleLine="true" android:textSize="@dimen/dis_textsize"
+            android:maxLength="6" android:background="@drawable/shape_edittext_bg" android:paddingLeft="3dp" android:layout_marginTop="5dp"
+            android:hint="@string/distribution_hint_price" android:inputType="numberDecimal"/>
+        
+        <TextView android:id="@+id/title4" android:layout_height="30dp" android:layout_width="65dp" android:layout_below="@+id/title3" android:layout_marginTop="5dp"
+            android:text="@string/distribution_str_sencprice" android:gravity="center_vertical|right" android:textSize="@dimen/dis_textsize"/>
+        <EditText android:id="@+id/dis_sendprice" android:layout_height="30dp" android:layout_width="fill_parent" android:digits="1234567890." android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/title4" android:layout_below="@+id/title3" android:singleLine="true" android:textSize="@dimen/dis_textsize"
+            android:maxLength="6" android:background="@drawable/shape_edittext_bg" android:paddingLeft="3dp" android:inputType="numberDecimal"
+            android:hint="@string/distribution_hint_price"/>
+        
+        <TextView android:id="@+id/title5" android:layout_height="30dp" android:layout_width="65dp" android:layout_below="@+id/title4" android:layout_marginTop="5dp"
+            android:text="@string/distribution_str_open" android:gravity="center_vertical|right" android:textSize="@dimen/dis_textsize"/>
+        <RadioGroup android:layout_height="30dp" android:layout_width="fill_parent" android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_below="@+id/title4" android:layout_toRightOf="@+id/title5" android:id="@+id/group1" android:layout_marginTop="5dp">
+            <RadioButton android:id="@+id/radio1" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="是" android:textSize="@dimen/dis_textsize" android:button="@drawable/radio_press" android:checked="true"
+                android:layout_marginLeft="10dp" android:paddingLeft="5dp"/>
+            <RadioButton android:id="@+id/radio2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="5dp"
+                android:text="否" android:layout_marginLeft="15dp" android:textSize="@dimen/dis_textsize" android:button="@drawable/radio_press"/>
+        </RadioGroup>
+        
+        <TextView android:id="@+id/title6" android:layout_height="30dp" android:layout_width="65dp" android:layout_below="@+id/title5" android:layout_marginTop="5dp"
+            android:text="@string/distribution_str_order" android:gravity="center_vertical|right" android:textSize="@dimen/dis_textsize"/>
+        <EditText android:id="@+id/dis_order" android:layout_height="30dp" android:layout_width="120dp" android:maxLength="9" android:text="" android:textSize="@dimen/dis_textsize"
+            android:layout_toRightOf="@+id/title6" android:layout_below="@+id/title5" android:singleLine="true" android:digits="1234567890"
+            android:background="@drawable/shape_edittext_bg" android:paddingLeft="3dp" android:layout_marginTop="5dp"/>
+        
+    </RelativeLayout>
+    
+    <Button android:id="@+id/submit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp"
+        android:text="@string/distribution_str_submit" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"/>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</LinearLayout>
