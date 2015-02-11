@@ -421,4 +421,14 @@
 <string name="buyer_order_order_time">下单时间:</string>
 <string name="buyer_order_delete">删除</string>
 
+<string name="distribution_layout_title">配送设置</string>
+<string name="distribution_layout_add">新增配送</string>
+<string name="distribution_str_type">配送方式</string>
+<string name="distribution_str_msg">简介:</string>
+<string name="distribution_str_firstprice">首件邮费:</string>
+<string name="distribution_str_sencprice">附加邮费:</string>
+<string name="distribution_str_open">启用:</string>
+<string name="distribution_str_edit">编辑</string>
+<string name="distribution_str_del">删除</string>
+
 </resources>

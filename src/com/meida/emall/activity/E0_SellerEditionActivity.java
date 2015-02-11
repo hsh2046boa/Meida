@@ -181,7 +181,7 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 					startActivity(intent);
 	            	overridePendingTransition(R.anim.push_buttom_in,R.anim.push_buttom_out);
 				} else {
-					intent = new Intent(E0_SellerEditionActivity.this,E0_ShopSettingActivity.class);
+					intent = new Intent(E0_SellerEditionActivity.this,E0_DistributionActivity.class);
 				    startActivity(intent);
 	                overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
 				}
