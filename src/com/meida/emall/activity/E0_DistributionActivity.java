@@ -22,7 +22,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.meida.emall.R;
 import com.meida.emall.adapter.E0_DistributionAdapter;
 /**
- * 店铺设置
+ * 配送设置
  * @author LENOV
  *
  */

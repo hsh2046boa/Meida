@@ -439,6 +439,25 @@
 
 <string name="distribution_hint_price">请输入电子币</string>
 
+<string name="distribution_addgoods_title">发布商品</string>
+<string name="distribution_addgoods_classification">商品分类</string>
+<string name="distribution_addgoods_name">商品名称</string>
+<string name="distribution_addgoods_brand">品牌</string>
+<string name="distribution_addgoods_label">标签</string>
+<string name="distribution_addgoods_inventory">库存量</string>
+<string name="distribution_addgoods_price">价格</string>
+<string name="distribution_addgoods_freight">运费</string>
+<string name="distribution_addgoods_location">所在地</string>
+<string name="distribution_addgoods_no">货号</string>
+<string name="distribution_addgoods_description">商品描述</string>
+<string name="distribution_addgoods_picture">选择图片</string>
+<string name="distribution_addgoods_select">选择</string>
+<string name="distribution_addgoods_photo">拍照</string>
+<string name="distribution_addgoods_draftbox">暂存草稿箱</string>
+<string name="distribution_addgoods_submit">提交</string>
+<string name="distribution_box_title">草稿箱</string>
+<string name="distribution_box_delete">删除商品</string>
+<string name="distribution_box_submit">确认发布</string>
 
 
 

@@ -4,5 +4,138 @@
     android:layout_height="match_parent" android:background="@drawable/body"
     android:orientation="vertical" >
     
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/nav_bg" >
+
+        <ImageView
+            android:id="@+id/profile_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/item_grid_header_arrow_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/distribution_addgoods_title"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/add_distribution"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp" 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" android:visibility="gone"
+            android:layout_marginRight="5dp" android:paddingLeft="3dp" android:paddingRight="3dp"
+            android:background="@drawable/filter_blue_btn"
+            android:text="@string/distribution_layout_add"
+            android:textColor="@color/TextColorWhite"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5dp" android:background="@color/white">
+        <TextView android:id="@+id/title1" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_classification" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp"/>
+        <EditText android:id="@+id/add_classification" android:layout_height="30dp" android:layout_width="160dp"
+            android:layout_toRightOf="@+id/title1" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title2" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_name" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title1"/>
+        <EditText android:id="@+id/add_name" android:layout_height="30dp" android:layout_width="160dp" android:layout_below="@+id/title1"
+            android:layout_toRightOf="@+id/title2" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title3" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_brand" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title2"/>
+        <EditText android:id="@+id/add_brand" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title2"
+            android:layout_toRightOf="@+id/title3" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title31" android:layout_height="30dp" android:layout_width="wrap_content" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_label" android:gravity="center_vertical|right" android:layout_toRightOf="@+id/add_brand"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title2" android:layout_marginLeft="5dp"/>
+        <EditText android:id="@+id/add_label" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title2"
+            android:layout_toRightOf="@+id/title31" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title32" android:layout_height="30dp" android:layout_width="wrap_content" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_inventory" android:gravity="center_vertical|right" android:layout_toRightOf="@+id/add_label"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title2" android:layout_marginLeft="5dp"/>
+        <EditText android:id="@+id/add_inventory" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title2"
+            android:layout_toRightOf="@+id/title32" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title4" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_price" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title3"/>
+        <EditText android:id="@+id/add_price" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title3"
+            android:layout_toRightOf="@+id/title4" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"
+            android:digits="1234567890." android:inputType="numberDecimal"/>
+        
+        <TextView android:id="@+id/title41" android:layout_height="30dp" android:layout_width="wrap_content" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_freight" android:gravity="center_vertical|right" android:layout_toRightOf="@+id/add_brand"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title3" android:layout_marginLeft="5dp"/>
+        <EditText android:id="@+id/add_freight" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title3"
+            android:layout_toRightOf="@+id/title41" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"
+            android:digits="1234567890." android:inputType="numberDecimal"/>
+        
+        <TextView android:id="@+id/title42" android:layout_height="30dp" android:layout_width="wrap_content" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_location" android:gravity="center_vertical|right" android:layout_toRightOf="@+id/add_label"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title3" android:layout_marginLeft="5dp"/>
+        <EditText android:id="@+id/add_location" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title3"
+            android:layout_toRightOf="@+id/title42" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title5" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_no" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title4"/>
+        <EditText android:id="@+id/add_no" android:layout_height="30dp" android:layout_width="160dp" android:layout_below="@+id/title4"
+            android:layout_toRightOf="@+id/title5" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+        
+        <TextView android:id="@+id/title6" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_description" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp" android:layout_below="@+id/title5"/>
+        <EditText android:id="@+id/add_description" android:layout_height="90dp" android:layout_width="270dp" android:layout_below="@+id/title5"
+            android:layout_toRightOf="@+id/title6" android:layout_marginLeft="5dp" android:padding="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:gravity="left"/>
+        
+        <TextView android:id="@+id/title7" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
+            android:text="@string/distribution_addgoods_picture" android:gravity="center_vertical|right"
+            android:layout_marginTop="5dp" android:layout_below="@+id/add_description"/>
+        <EditText android:id="@+id/add_picture" android:layout_height="30dp" android:layout_width="160dp" android:layout_below="@+id/add_description"
+            android:layout_toRightOf="@+id/title7" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"
+            android:enabled="false"/>
+        <Button android:id="@+id/add_select" android:layout_width="50dp" android:layout_height="30dp"
+            android:text="@string/distribution_addgoods_select" android:layout_toRightOf="@+id/add_picture" android:layout_below="@+id/add_description"
+            android:textSize="@dimen/dis_textsize" android:background="@drawable/nav_bg" android:textColor="@color/white" android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"/>
+        <Button android:id="@+id/add_photo" android:layout_width="50dp" android:layout_height="30dp"
+            android:text="@string/distribution_addgoods_photo" android:layout_toRightOf="@+id/add_select" android:layout_below="@+id/add_description"
+            android:textSize="@dimen/dis_textsize" android:background="@drawable/nav_bg" android:textColor="@color/white" android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"/>
+        
+    </RelativeLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" 
+        android:layout_marginTop="15dp" android:layout_gravity="center_horizontal">
+        <Button android:id="@+id/add_save" android:layout_width="120dp" android:layout_height="40dp" android:background="@drawable/nav_bg"
+            android:text="@string/distribution_addgoods_draftbox" android:textColor="@color/white"/>
+        <Button android:id="@+id/add_submit" android:layout_width="120dp" android:layout_height="40dp" android:layout_marginLeft="15dp"
+            android:text="@string/distribution_addgoods_submit" android:textColor="@color/white" android:background="@drawable/nav_bg"/>
+    </LinearLayout>
 
 </LinearLayout>
