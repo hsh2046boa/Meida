@@ -16,6 +16,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,6 +39,7 @@ import com.meida.emall.model.LoginModel;
 import com.meida.emall.model.MyFairModel;
 import com.meida.emall.model.ProtocolConst;
 import com.meida.emall.model.UserInfoModel;
+import com.meida.emall.protocol.MYFAIR;
 import com.meida.emall.protocol.USER;
 import com.umeng.analytics.MobclickAgent;
 /**
@@ -132,6 +135,24 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 		}
 
 	}
+	
+	private Handler mhandler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+			switch(msg.what){
+				case 1001:
+					int index = (Integer)msg.obj;
+					fairModel.myfair = fairModel.fair_List.get(index);
+					Intent intent = new Intent(E0_SellerEditionActivity.this,E0_AddGoodsActivity.class);
+                    startActivity(intent);
+					break;
+			}
+		}
+		
+	};
 
 	@Override
 	public void OnMessageResponse(String url, JSONObject jo, AjaxStatus status)
@@ -143,9 +164,11 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 		if(url.endsWith(ProtocolConst.MyFair)) {			
 			System.out.println("sss");
 			xlistView.stopRefresh();
+			xlistView.stopLoadMore();
 			xlistView.setRefreshTime();
 			
 			mE0SellAdapter = new E0_SellerEditionAdapter(this, fairModel.fair_List);
+			mE0SellAdapter.setHandler(mhandler);
 			xlistView.setAdapter(mE0SellAdapter);
 			//xlistView.setOnItemClickListener(listener)
 		}
@@ -157,7 +180,16 @@ public class E0_SellerEditionActivity extends BaseActivity implements IXListView
 		Intent intent;
 		switch(v.getId()){
 			case R.id.profile_seller:
-				
+				if (uid.equals("")) {
+					isRefresh = true;
+					intent = new Intent(E0_SellerEditionActivity.this, A0_SigninActivity.class);
+					startActivity(intent);
+	            	overridePendingTransition(R.anim.push_buttom_in,R.anim.push_buttom_out);
+				} else {
+					intent = new Intent(E0_SellerEditionActivity.this,E0_AddGoodsActivity.class);
+				    startActivity(intent);
+	                overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
+				}
 				break;
 			case R.id.profile_back:
 				E0_SellerEditionActivity.this.finish();

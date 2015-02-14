@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:ellipsize="end"
-            android:singleLine="true"
+            android:singleLine="true" android:id="@+id/edit_title"
             android:text="@string/distribution_addgoods_title"
             android:textColor="#ffffff"
             android:textSize="22sp" />
@@ -45,7 +45,8 @@
             android:layout_marginTop="5dp"/>
         <EditText android:id="@+id/add_classification" android:layout_height="30dp" android:layout_width="160dp"
             android:layout_toRightOf="@+id/title1" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
-            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"
+            android:enabled="false"/>
         
         <TextView android:id="@+id/title2" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
             android:text="@string/distribution_addgoods_name" android:gravity="center_vertical|right"
@@ -96,7 +97,8 @@
             android:layout_marginTop="5dp" android:layout_below="@+id/title3" android:layout_marginLeft="5dp"/>
         <EditText android:id="@+id/add_location" android:layout_height="30dp" android:layout_width="60dp" android:layout_below="@+id/title3"
             android:layout_toRightOf="@+id/title42" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
-            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"/>
+            android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"
+            android:enabled="false"/>
         
         <TextView android:id="@+id/title5" android:layout_height="30dp" android:layout_width="65dp" android:textSize="@dimen/dis_textsize"
             android:text="@string/distribution_addgoods_no" android:gravity="center_vertical|right"
@@ -118,7 +120,7 @@
         <EditText android:id="@+id/add_picture" android:layout_height="30dp" android:layout_width="160dp" android:layout_below="@+id/add_description"
             android:layout_toRightOf="@+id/title7" android:layout_marginLeft="5dp" android:paddingLeft="3dp" android:textSize="@dimen/dis_textsize"
             android:background="@drawable/shape_edittext_bg" android:text="" android:layout_marginTop="5dp" android:singleLine="true"
-            android:enabled="false"/>
+            android:enabled="false" android:ellipsize="start"/>
         <Button android:id="@+id/add_select" android:layout_width="50dp" android:layout_height="30dp"
             android:text="@string/distribution_addgoods_select" android:layout_toRightOf="@+id/add_picture" android:layout_below="@+id/add_description"
             android:textSize="@dimen/dis_textsize" android:background="@drawable/nav_bg" android:textColor="@color/white" android:layout_marginTop="5dp"
@@ -133,9 +135,9 @@
     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" 
         android:layout_marginTop="15dp" android:layout_gravity="center_horizontal">
         <Button android:id="@+id/add_save" android:layout_width="120dp" android:layout_height="40dp" android:background="@drawable/nav_bg"
-            android:text="@string/distribution_addgoods_draftbox" android:textColor="@color/white"/>
+            android:text="@string/distribution_addgoods_draftbox" android:textColor="@color/white" android:tag="1"/>
         <Button android:id="@+id/add_submit" android:layout_width="120dp" android:layout_height="40dp" android:layout_marginLeft="15dp"
-            android:text="@string/distribution_addgoods_submit" android:textColor="@color/white" android:background="@drawable/nav_bg"/>
+            android:text="@string/distribution_addgoods_submit" android:textColor="@color/white" android:background="@drawable/nav_bg" android:tag="2"/>
     </LinearLayout>
 
 </LinearLayout>

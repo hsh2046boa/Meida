@@ -23,6 +23,7 @@ import com.meida.emall.protocol.STATUS;
 
 public class MyFairModel extends BaseModel {
 	public ArrayList<MYFAIR> fair_List = new ArrayList<MYFAIR>();
+	public MYFAIR myfair = new MYFAIR();
 
 	public MyFairModel(Context context) {
          super(context);

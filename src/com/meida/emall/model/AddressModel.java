@@ -252,7 +252,15 @@ public class AddressModel extends BaseModel {
 		};
 
 		Map<String, String> params = new HashMap<String, String>();
-		
+		SESSION session = SESSION.getInstance();
+		JSONObject requestJsonObject = new JSONObject();
+		try 
+		{
+            requestJsonObject.put("session",session.toJson());
+		} catch (JSONException e) {
+			// TODO: handle exception
+		}
+        params.put("json",requestJsonObject.toString());
 		params.put("parent_id", parent_id);
 
 		cb.url(url).type(JSONObject.class).params(params);

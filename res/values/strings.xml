@@ -459,6 +459,11 @@
 <string name="distribution_box_delete">删除商品</string>
 <string name="distribution_box_submit">确认发布</string>
 
+<string name="operation_failed">操作失败!</string>
+<string name="operation_success">操作成功!</string>
+
+<string name="goods_category">选择商品分类</string>
+
 
 
 

@@ -7,8 +7,11 @@ import com.meida.emall.protocol.MYFAIR;
 
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -18,11 +21,16 @@ public class E0_SellerEditionAdapter extends BaseAdapter {
 	List<MYFAIR> mlist;
 	Context mContext;
 	LayoutInflater minflater;
+	Handler mhandler;
 	
 	public E0_SellerEditionAdapter(Context c,List<MYFAIR> list){
 		mContext = c;
 		mlist = list;
 		minflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	}
+	
+	public void setHandler(Handler handler){
+		mhandler = handler;
 	}
 
 	@Override
@@ -44,7 +52,7 @@ public class E0_SellerEditionAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View v, ViewGroup parent) {
+	public View getView(final int position, View v, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		Holder mhold;
 		if(v == null){
@@ -65,7 +73,18 @@ public class E0_SellerEditionAdapter extends BaseAdapter {
 			mhold.title.setText(fair.goods_name);
 			mhold.prive.setText("￥"+fair.price);
 			mhold.quanlity.setText("已售"+fair.seller_quantity+"件");
-			
+			mhold.quanlity.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Message msg = mhandler.obtainMessage();
+					msg.what = 1001;
+					msg.obj = position;
+					mhandler.sendMessage(msg);
+				}
+				
+			});
 		}
 		
 		return v;

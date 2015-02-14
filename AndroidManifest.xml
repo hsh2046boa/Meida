@@ -294,6 +294,10 @@
 		<activity
             android:name="com.meida.emall.activity.E0_DraftboxActivity"          
             android:screenOrientation="portrait" />
+		<activity
+            android:name="com.meida.emall.activity.E0_GcategoryGoodActivity"               
+            android:screenOrientation="portrait"
+            android:theme="@style/dialog" />
         
         
 

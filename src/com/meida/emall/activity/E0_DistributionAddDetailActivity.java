@@ -47,7 +47,7 @@ public class E0_DistributionAddDetailActivity extends BaseActivity implements On
 	}
 	
 	private void initView(){
-		mBtnback = (ImageView)findViewById(R.id.profile_back);
+		mBtnback = (ImageView)findViewById(R.id.distribution_back);
 		mDisTitle = (TextView)findViewById(R.id.dis_title);
 		mSubmit = (Button)findViewById(R.id.submit);
 		mDisName = (EditText)findViewById(R.id.dis_name);
@@ -94,7 +94,7 @@ public class E0_DistributionAddDetailActivity extends BaseActivity implements On
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
-			case R.id.profile_back:
+			case R.id.distribution_back:
 				E0_DistributionAddDetailActivity.this.finish();
 				break;
 			case R.id.submit:

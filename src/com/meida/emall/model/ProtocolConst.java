@@ -97,8 +97,13 @@ public class ProtocolConst {
     public static String BRAND = "brand";                       //获取所有品牌
     public static String PRICE_RANGE = "price_range";           //根据分类获取价格区间
     
-    public static String MyFair = "app=my_fair";             //个人市集商品列表
-    public static String BuyerOrder = "app=buyer_order";     //订单列表
+    public static String MyFair             = "app=my_fair";                          //个人市集商品列表
+    public static String BuyerOrder         = "app=buyer_order";                      //订单列表
+    public static String CancleOrder        = "app=seller_order&act=cancel_order";    //取消订单
+    public static String GcategoryGood      = "app=my_fair&act=gcategory";            //个人市集商品分类
+    public static String GoodsAdd           = "app=my_fair&act=add";                  //新增商品
+    public static String GoodsAddImage      = "app=my_fair&act=add_image";            //商品图片
+    public static String GoodsGetOne        = "app=my_fair&act=getOne";               //获取某条商品
 
     
 }
